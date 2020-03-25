@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 1px 3px 0px #6c0202;
+  padding: 20px;
+  border-radius: 12px;
+  width: 60vw;
+  max-width: 500px;
+  align-items: center;
+}
+
+#form > div {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0px;
+}
+
+#form > p {
+  font-size: x-large;
+  font-weight: 300;
+}
+
+#form > div > label {
+  font-size: large;
+}
+
+.input-form,
+button-form {
+  padding: 5px;
+  width: 30vw;
+  border-radius: 5px;
+}
+
+.input-form {
+  margin: 5px 0px;
+  max-width: 300px;
+  min-width: 200px;
+  height: 30px;
+  border: 1px solid #e30513;
+  font-size: medium;
+}
+
+.button-form {
+  margin: 5px auto;
+  max-width: 180px;
+  min-width: 150px;
+  height: 40px;
+  color: white;
+  background-color: #e30513;
+  font-size: large;
+}
+
+#message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: inherit;
+  color: #e30513;
+}
+
+#message-link {
+  color: #e30513;
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+#error {
+  color: #e30513;
+  text-align: center;
+}
