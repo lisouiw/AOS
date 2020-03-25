@@ -22,5 +22,5 @@ export const login = setErr => {
       setErr(true);
       window.location = "/success";
     })
-    .catch(() => reject({ status: 500, err: "Internal Server Error" }));
+    .catch(() => setErr({ status: 500, err: "Internal Server Error" }));
 };
