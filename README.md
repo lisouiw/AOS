@@ -1,4 +1,4 @@
-## ENVIRONMENT
+## Emvironment
   DB_PORT=\**PORT**
   
   DB_NAME=\**NAME**
