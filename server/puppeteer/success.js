@@ -11,14 +11,10 @@ const connection = async () => {
 
   await page.on("response", async response => {
     if (response.url() == "http://localhost:3000/success") {
-      console.log("Success: login");
-      console.log("Closing Browser");
-      
+      console.log(`login: Success\nClosing Browser`);
       await browser.close();
     } else if (response.status() !== 200) {
-      console.log("Failed: login");
-      console.log("Closing Browser");
-
+      console.log(`login: Failed\nClosing Browser`);
       await browser.close();
     }
   });

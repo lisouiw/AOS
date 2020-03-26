@@ -7,14 +7,15 @@ MongoClient.connect(url, option, (err, db) => {
   if (err) throw err;
 
   let dbo = db.db(process.env.DB_NAME);
+  let myobj = { email: "root@root.com", password: "root" };
 
-  dbo.collection("users").drop(function(err, delOK) {
-    if (err) throw err;
-    if (delOK) console.log("Collection deleted users");
-    db.close();
-  });
-
-  var myobj = { email: "root@root.com", password: "root" };
+  try {
+    dbo.collection("users").drop((err, delOK) => {
+      if (err) return;
+      else if (delOK) console.log("Collection deleted users");
+      db.close();
+    });
+  } catch (e) {}
 
   dbo.collection("users").insertOne(myobj, function(err, res) {
     if (err) throw err;

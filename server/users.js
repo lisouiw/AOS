@@ -16,7 +16,7 @@ const getUser = async ({ email, password }) => {
         .find({ email, password })
         .toArray()
         .then(res =>
-          resolve(!res[0] ? { err: "Email or password incorect" } : res[0])
+          resolve(!res[0] ? { err: "Email or password incorrect" } : res[0])
         )
         .catch(() => reject({ status: 500, err: "Internal Server Error" }));
     });

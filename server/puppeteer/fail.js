@@ -23,23 +23,22 @@ let words = [
 ];
 
 const fillFields = async ({ name, email, password, msg }, page) => {
+  await page.reload({ waitUntil: ["networkidle0", "domcontentloaded"] });
   await page.type('input[type="email"]', email);
   await page.type('input[type="password"]', password);
   await page.click('input[type="button"]');
+  await page.waitForFunction('document.querySelector("#error").innerText');
 
   let rsl = await page.evaluate(async msg => {
     try {
       let err = await document.querySelector("#error").innerText;
-
-      await page.waitFor("#error");
-
       return err === msg ? true : false;
     } catch (error) {
       return false;
     }
   }, msg);
 
-  console.log(`${rsl ? "Success" : "Failed"}:`, name, rsl);
+  console.log(`${name}: ${rsl ? "Success" : "Failed"}`);
 };
 
 const failedTest = async () => {
